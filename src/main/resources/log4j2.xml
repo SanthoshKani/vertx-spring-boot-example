@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration monitorInterval="30">
+    <Appenders>
+        <Console name="STDOUT" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{dd-MM-yyyy [HH:mm:ss]} %-5level (%F:%L) [%t] - %m%n"/>
+        </Console>
+    </Appenders>
+   <!--  <Appenders>
+        <RollingFile name="LOGFILE" fileName="logs/app.log"
+                     filePattern="logs/app-%d{MM-dd-yyyy}-%i.log.gz">
+            <PatternLayout pattern="%d{dd-MM-yyyy [HH:mm:ss]} %-5level (%F:%L) [%t] - %m%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy/>
+                <SizeBasedTriggeringPolicy size="5 MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="20"/>
+        </RollingFile>
+    </Appenders> -->
+    <Loggers>
+        <Logger name="org.apache.log4j.xml" level="info"/>
+        <Root level="debug">
+            <AppenderRef ref="STDOUT"/>
+        </Root>
+    </Loggers>
+</Configuration>
